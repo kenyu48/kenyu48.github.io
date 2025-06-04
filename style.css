@@ -1,158 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap');
+/* すでに適用済みの内容を維持しつつ、追加修正部分のみ記述 */
 
-:root {
-  --bg-color: #0b0c10;
-  --card-color: rgba(255, 255, 255, 0.04);
-  --border-color: rgba(255, 255, 255, 0.1);
-  --accent-purple: #8e44ad;
-  --accent-red: #c0392b;
-  --text-color: #ecf0f1;
-  --muted: #7f8c8d;
-  --font: 'Rajdhani', sans-serif;
-  --radius: 12px;
-  --shadow: 0 0 20px rgba(255, 0, 100, 0.15);
-}
-
-/* ローディング */
-#loader {
+#intro-logo {
   position: fixed;
   inset: 0;
   background: black;
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-  z-index: 100;
-  animation: flash 2s infinite alternate;
+  z-index: 1000;
+  transition: opacity 0.5s ease;
 }
-.loader-text {
-  font-family: var(--font);
-  font-size: 1.4rem;
-  color: var(--accent-red);
-  text-shadow: 0 0 8px red;
+.intro-text {
+  font-size: 3rem;
+  text-align: center;
+  color: #ff3c41;
+  font-family: 'Rajdhani', sans-serif;
+  letter-spacing: 0.1em;
+  animation: glitch 1.2s infinite alternate;
+  text-shadow: 0 0 8px red, 0 0 4px white;
 }
-@keyframes flash {
-  from {
-    background-color: black;
-  }
-  to {
-    background-color: #300;
-  }
-}
-
-body {
-  background-color: var(--bg-color);
-  background-image: linear-gradient(45deg, rgba(255,0,150,0.02) 25%, transparent 25%),
-                    linear-gradient(-45deg, rgba(255,0,150,0.02) 25%, transparent 25%),
-                    linear-gradient(45deg, transparent 75%, rgba(255,0,150,0.02) 75%),
-                    linear-gradient(-45deg, transparent 75%, rgba(255,0,150,0.02) 75%);
-  background-size: 40px 40px;
-  font-family: var(--font);
-  color: var(--text-color);
-  padding: 40px 20px;
-  line-height: 1.8;
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(2px, -1px); }
+  60% { transform: translate(-2px, 2px); }
+  80% { transform: translate(1px, -2px); }
+  100% { transform: translate(0); }
 }
 
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
+.styled-name {
+  font-size: 2.8rem;
+  color: #8e44ad;
+  position: relative;
+  padding: 0.25em 0.5em;
+  text-shadow: 0 0 6px #8e44ad, 0 0 12px black;
 }
-
-header {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.profile-image {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--accent-purple);
-  box-shadow: var(--shadow);
-}
-
-h1 {
-  font-size: 2.5rem;
-  color: var(--accent-purple);
-  text-shadow: 1px 1px 2px black, 0 0 6px var(--accent-purple);
-}
-
-h2 {
-  font-size: 1.4rem;
-  border-bottom: 2px solid var(--accent-red);
-  padding-bottom: 6px;
-  color: var(--accent-red);
-  text-shadow: 0 0 4px black;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-section {
-  background-color: var(--card-color);
-  padding: 28px;
-  border-radius: var(--radius);
-  border: 1px solid var(--border-color);
-  backdrop-filter: blur(6px);
-  box-shadow: var(--shadow);
-  transition: all 0.3s ease;
-}
-section:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent-purple);
-}
-
-ul {
-  list-style: none;
-  padding-left: 0;
-}
-li::before {
-  content: "▶";
-  color: var(--accent-purple);
-  margin-right: 6px;
-}
-
-a {
-  color: var(--accent-purple);
-  font-weight: 600;
-  text-decoration: none;
-}
-a:hover {
-  color: var(--accent-red);
-  text-shadow: 0 0 4px var(--accent-red);
-}
-
-table {
+.styled-name::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 12px;
-  color: var(--text-color);
+  height: 3px;
+  background: linear-gradient(to right, #8e44ad, #c0392b);
+  animation: border-glow 2s infinite alternate;
 }
-th, td {
-  padding: 14px;
-  border: 1px solid var(--border-color);
-}
-th {
-  background-color: var(--accent-purple);
-  color: #fff;
-  font-weight: 600;
-}
-tr:nth-child(even) {
-  background-color: rgba(255, 255, 255, 0.02);
-}
-
-@media (max-width: 600px) {
-  .profile-image {
-    width: 56px;
-    height: 56px;
-  }
-  h1 {
-    font-size: 2rem;
-  }
-  section {
-    padding: 20px;
-  }
+@keyframes border-glow {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
 }
