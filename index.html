@@ -12,9 +12,11 @@
     </div>
 
     <main class="container" style="display: none">
-      <header class="section">
-        <img src="profile.jpg" alt="藤井健佑のプロフィール画像" class="profile-image" />
-        <h1 class="title-name">藤井健佑</h1>
+      <header class="section header-enhanced">
+        <div class="profile-image-wrapper">
+          <img src="profile.jpg" alt="藤井健佑のプロフィール画像" class="profile-image" />
+        </div>
+        <h1 class="title-name-enhanced">藤井健佑</h1>
       </header>
 
       <section class="section profile-info">
@@ -101,7 +103,8 @@
           </tr>
           <tr>
             <th>2025年</th>
-            <td><a href="http://www.yokote-seiryou.net/" target="_blank" rel="noopener noreferrer">秋田県立横手清陵学院高校</a> 卒業</td> </tr>
+            <td><a href="http://www.yokote-seiryou.net/" target="_blank" rel="noopener noreferrer">秋田県立横手清陵学院高校</a> 卒業</td>
+          </tr>
           <tr>
             <th>同年</th>
             <td><a href="https://zen.ac.jp/" target="_blank" rel="noopener noreferrer">ZEN大学</a> 入学</td>
@@ -117,7 +120,6 @@
           document.getElementById("splash").style.opacity = 0;
           setTimeout(() => {
             document.getElementById("splash").style.display = "none";
-            // main要素を表示するように修正
             document.querySelector("main.container").style.display = "block";
             const sections = document.querySelectorAll(".section");
             const observer = new IntersectionObserver(entries => {
