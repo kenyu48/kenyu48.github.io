@@ -42,29 +42,27 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  background: #0a0a0f;
   width: 100%;
   height: 100%;
+  background: #0a0a0f;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   z-index: 9999;
   transition: opacity 1s ease;
 }
-
 .splash-warning {
   font-size: 2rem;
   color: var(--accent-red);
-  text-shadow: 0 0 6px var(--accent-red), 0 0 12px var(--accent-red);
+  text-shadow: 0 0 6px var(--accent-red), 0 0 12px var(--accent-red), 0 0 24px var(--accent-red);
   animation: warningBlink 1s infinite alternate;
 }
-
 @keyframes warningBlink {
   0% { opacity: 1; transform: scale(1); }
   100% { opacity: 0.6; transform: scale(1.05); }
 }
 
-/* ヘッダー */
+/* ヘッダー（左:画像 右:名前） */
 .split-header {
   display: flex;
   border: 2px solid var(--accent-purple);
@@ -73,7 +71,6 @@ body {
   box-shadow: 0 0 18px var(--accent-purple);
   background: var(--bg-color);
 }
-
 .split-left {
   width: 35%;
   background: #0a0a0f;
@@ -82,7 +79,13 @@ body {
   justify-content: center;
   padding: 20px;
 }
-
+.profile-image-enhanced {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 3px solid var(--accent-red);
+  box-shadow: 0 0 12px var(--accent-red);
+}
 .split-right {
   width: 65%;
   background: #0a0a0f;
@@ -91,35 +94,24 @@ body {
   justify-content: center;
   padding: 20px 30px;
 }
-
-.profile-image-enhanced {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border: 3px solid var(--accent-red);
-  box-shadow: 0 0 12px var(--accent-red);
-}
-
 .split-title {
   font-size: 2.6rem;
   font-weight: 700;
   color: var(--accent-purple);
   text-shadow: 0 0 8px var(--accent-purple);
 }
-
 .split-subtitle {
   font-size: 1.1rem;
   color: var(--muted);
   margin-top: 0.4em;
 }
-
 .split-tagline {
   font-size: 0.9rem;
   color: var(--accent-blue);
   margin-top: 0.4em;
 }
 
-/* セクション */
+/* セクション共通 */
 .section {
   padding: 40px 20px;
   border-radius: var(--radius);
@@ -129,7 +121,7 @@ body {
   transform: translateY(40px);
   transition: all 0.6s ease;
 }
-.section.show {
+.show {
   opacity: 1;
   transform: translateY(0);
 }
@@ -144,26 +136,7 @@ body {
   color: var(--accent-purple);
 }
 
-/* イベント・作品カード */
-.event-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius);
-  transition: background 0.2s, transform 0.2s;
-  padding: 16px;
-}
-.event-card:hover {
-  background: rgba(255, 60, 87, 0.1);
-  transform: translateY(-2px);
-}
-.event-card a {
-  display: block;
-  color: var(--accent-blue);
-  font-weight: bold;
-  text-decoration: none;
-}
-
-/* スキル（テーブル） */
+/* スキル表 */
 .skill-table {
   width: 100%;
   border-collapse: collapse;
@@ -182,12 +155,33 @@ body {
   color: var(--text-color);
 }
 
+/* イベント・作品・URLカード */
+.event-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  padding: 16px;
+  margin: 10px 0;
+  border-radius: var(--radius);
+  transition: background 0.2s, transform 0.2s;
+}
+.event-card:hover {
+  background: rgba(255, 60, 87, 0.1);
+  transform: translateY(-2px);
+}
+.event-card a {
+  display: block;
+  color: var(--accent-blue);
+  font-weight: bold;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+}
+
 /* SNS・連絡先 */
 .sns-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 16px;
+  gap: 20px;
 }
 .contact-button {
   display: inline-flex;
@@ -212,11 +206,9 @@ body {
 .sns-x { border-left: 4px solid #1da1f2; color: #1da1f2; }
 .sns-instagram { border-left: 4px solid #e1306c; color: #e1306c; }
 .sns-mail { border-left: 4px solid #ffae42; color: #ffae42; }
-.contact-button i {
-  font-size: 1.2rem;
-}
+.contact-button i { font-size: 1.2rem; }
 
-/* タイムライン */
+/* 年表（これまでの歩み） */
 .timeline-vertical {
   display: flex;
   flex-direction: column;
@@ -236,11 +228,11 @@ body {
 .timeline-desc a {
   color: var(--text-color);
   text-decoration: none;
-  font-size: 1rem;
   margin-left: 4px;
+  font-size: 1rem;
 }
 
-/* スマホ対応 */
+/* レスポンシブ */
 @media (max-width: 768px) {
   .split-header {
     flex-direction: column;
@@ -252,7 +244,7 @@ body {
   .sns-grid {
     flex-direction: column;
   }
-  .split-title {
-    font-size: 2rem;
+  .skill-table th, .skill-table td {
+    font-size: 0.9rem;
   }
 }
