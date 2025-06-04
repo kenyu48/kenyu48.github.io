@@ -1,24 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap');
 
-/* 全体設定 */
-body {
+:root {
+  --bg-color: #0b0c10;
+  --card-color: rgba(255, 255, 255, 0.04);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --accent-purple: #8e44ad;
+  --accent-red: #c0392b;
+  --text-color: #ecf0f1;
+  --muted: #7f8c8d;
+
+  --font: 'Rajdhani', sans-serif;
+  --radius: 12px;
+  --shadow: 0 0 20px rgba(255, 0, 100, 0.15);
+}
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: 'Rajdhani', sans-serif;
-  background-color: #0b0c10;
-  color: #ecf0f1;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--bg-color);
+  background-image: linear-gradient(45deg, rgba(255,0,150,0.02) 25%, transparent 25%),
+                    linear-gradient(-45deg, rgba(255,0,150,0.02) 25%, transparent 25%),
+                    linear-gradient(45deg, transparent 75%, rgba(255,0,150,0.02) 75%),
+                    linear-gradient(-45deg, transparent 75%, rgba(255,0,150,0.02) 75%);
+  background-size: 40px 40px;
+  color: var(--text-color);
+  padding: 40px 20px;
+  line-height: 1.8;
 }
 
 .container {
-  display: none;
   max-width: 960px;
   margin: 0 auto;
-  padding: 40px 20px;
   display: flex;
   flex-direction: column;
   gap: 48px;
 }
 
-/* ヘッダー */
 header {
   display: flex;
   align-items: center;
@@ -30,112 +52,102 @@ header {
   height: 72px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #8e44ad;
+  border: 3px solid var(--accent-purple);
+  box-shadow: var(--shadow);
 }
 
-/* タイトル装飾 */
-.styled-name {
-  font-size: 2.8rem;
-  color: #8e44ad;
-  position: relative;
-  padding: 0.25em 0.5em;
-  text-shadow: 0 0 6px #8e44ad, 0 0 12px black;
+h1 {
+  font-size: 2.5rem;
+  color: var(--accent-purple);
+  text-shadow: 0 0 4px var(--accent-purple);
 }
 
-.styled-name::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(to right, #8e44ad, #c0392b);
-  animation: border-glow 2s infinite alternate;
-}
-
-@keyframes border-glow {
-  from { opacity: 0.4; }
-  to { opacity: 1; }
-}
-
-/* セクション共通 */
-section {
-  background: rgba(255, 255, 255, 0.04);
-  padding: 28px;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(6px);
-}
-
-/* セクション見出し */
 h2 {
-  color: #c0392b;
-  border-bottom: 2px solid #c0392b;
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+  border-bottom: 2px solid var(--accent-red);
   padding-bottom: 6px;
-  text-shadow: 0 0 4px black;
+  color: var(--accent-red);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* リストとテーブル */
-ul, table {
-  margin-top: 10px;
+section {
+  background-color: var(--card-color);
+  padding: 28px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+section:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-purple);
 }
 
+.profile-info ul {
+  list-style: none;
+  padding-left: 0;
+}
+.profile-info li {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.profile-info span {
+  font-weight: 400;
+  color: var(--muted);
+  margin-left: 8px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
 li::before {
-  content: "\25B6 ";
-  color: #8e44ad;
+  content: "▶";
+  color: var(--accent-purple);
+  margin-right: 6px;
 }
 
 a {
-  color: #8e44ad;
+  color: var(--accent-purple);
+  font-weight: 600;
   text-decoration: none;
 }
-
 a:hover {
-  text-decoration: underline;
+  color: var(--accent-red);
+  text-shadow: 0 0 4px var(--accent-red);
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 12px;
+  color: var(--text-color);
 }
-
 th, td {
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 12px;
+  padding: 14px;
+  border: 1px solid var(--border-color);
 }
-
 th {
-  background: #8e44ad;
-  color: white;
+  background-color: var(--accent-purple);
+  color: #fff;
+  font-weight: 600;
+}
+tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.02);
 }
 
-/* ローディングロゴ演出 */
-#intro-logo {
-  position: fixed;
-  inset: 0;
-  background: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  transition: opacity 0.5s ease;
-}
-
-.intro-text {
-  font-size: 3rem;
-  text-align: center;
-  color: #ff3c41;
-  font-family: 'Rajdhani', sans-serif;
-  letter-spacing: 0.1em;
-  animation: glitch 1.2s infinite alternate;
-  text-shadow: 0 0 8px red, 0 0 4px white;
-}
-
-@keyframes glitch {
-  0% { transform: translate(0); }
-  20% { transform: translate(-1px, 1px); }
-  40% { transform: translate(2px, -1px); }
-  60% { transform: translate(-2px, 2px); }
-  80% { transform: translate(1px, -2px); }
-  100% { transform: translate(0); }
+@media (max-width: 600px) {
+  .profile-image {
+    width: 56px;
+    height: 56px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  section {
+    padding: 20px;
+  }
 }
