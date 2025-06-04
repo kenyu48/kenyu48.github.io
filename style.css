@@ -79,14 +79,6 @@ body {
   gap: 30px; /* アイコンと名前の間隔を少し広げました */
 }
 
-/* h1とspanをグループ化するhgroupのスタイル */
-hgroup {
-  display: flex; /* 横並びにする */
-  flex-direction: column; /* 縦に並べる */
-  align-items: flex-start; /* 左寄せ */
-  gap: 5px; /* 名前とサブタイトルの間のスペース */
-}
-
 .profile-image-wrapper {
   width: 72px;
   height: 72px;
@@ -127,23 +119,6 @@ hgroup {
   color: var(--accent-red);
   transform: translateX(5px);
   cursor: default;
-}
-
-/* KENYU FUJII のスタイル */
-.subtitle-name {
-  font-size: 1.2rem; /* サイズ調整 */
-  color: var(--muted); /* ミュートされた色で目立ちすぎないように */
-  text-transform: uppercase; /* 大文字 */
-  letter-spacing: 1px; /* 文字間隔 */
-  opacity: 0.8; /* 少し透明度を持たせる */
-  text-shadow: 0 0 4px rgba(255, 255, 255, 0.1); /* 控えめなシャドウ */
-  transition: all 0.3s ease-in-out;
-}
-
-.subtitle-name:hover {
-    color: var(--accent-purple); /* ホバーで色を変える */
-    opacity: 1;
-    transform: translateX(3px); /* わずかに移動 */
 }
 
 /* セクションタイトル */
@@ -252,14 +227,6 @@ tr:nth-child(even) {
   }
   .title-name-enhanced {
     font-size: 2.2rem;
-  }
-  /* KENYU FUJII のモバイルスタイル調整 */
-  .subtitle-name {
-    font-size: 0.9rem; /* モバイルでは少し小さく */
-    letter-spacing: 0.5px;
-  }
-  hgroup {
-    gap: 2px; /* モバイルでの間隔 */
   }
   
   section {
