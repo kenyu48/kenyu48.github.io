@@ -38,7 +38,7 @@ body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 150px; /* ここを100pxから150pxに増やしました */
+  gap: 150px; /* ここをさらに広げる (各セクション間150px) */
 }
 
 /* ローディング画面 */
