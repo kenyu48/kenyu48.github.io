@@ -112,6 +112,30 @@
       </section>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          const splash = document.getElementById("splash");
+          splash.classList.add("fade-out");
+
+          setTimeout(() => {
+            splash.style.display = "none";
+            const container = document.querySelector(".container");
+            container.style.opacity = "1";
+
+            const sections = document.querySelectorAll(".animate-section");
+            const observer = new IntersectionObserver(entries => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("show");
+                }
+              });
+            }, { threshold: 0.2 });
+
+            sections.forEach(section => observer.observe(section));
+          }, 1200);
+        }, 1600);
+      });
+    </script>
   </body>
 </html>
