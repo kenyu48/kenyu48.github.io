@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>藤井健佑のポートフォリオ</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="style.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
+
+  <!-- スプラッシュ -->
   <div id="splash">
     <div class="splash-warning">EMERGENCY<br>起動シーケンス開始</div>
   </div>
@@ -16,17 +18,17 @@
     <!-- ヘッダー -->
     <header class="split-header">
       <div class="split-left">
-        <img src="profile.jpg" alt="プロフィール画像" class="profile-image-enhanced" />
+        <img src="profile.jpg" alt="藤井健佑のプロフィール画像" class="profile-image-enhanced" />
       </div>
       <div class="split-right">
         <h1 class="split-title">藤井健佑</h1>
         <span class="split-subtitle">KENYU FUJII</span>
-        <p class="split-tagline">Official Portfolio Site</p>
+        <p class="split-tagline">ポートフォリオサイト</p>
       </div>
     </header>
 
     <!-- プロフィール -->
-    <section class="section">
+    <section class="section show">
       <h2>プロフィール</h2>
       <ul class="profile-list">
         <li><strong>名前：</strong>藤井健佑</li>
@@ -38,7 +40,7 @@
     </section>
 
     <!-- 関わったイベント -->
-    <section class="section">
+    <section class="section show">
       <h2>関わったイベント</h2>
       <div class="event-card"><a href="https://km1world.com/japantotheworld/" target="_blank">JAPAN to the World</a></div>
       <div class="event-card"><a href="https://www.instagram.com/y_akamonmatsuri/" target="_blank">赤門祭</a></div>
@@ -47,41 +49,71 @@
     </section>
 
     <!-- 作った作品 -->
-    <section class="section">
+    <section class="section show">
       <h2>作った作品</h2>
       <div class="event-card"><a href="https://youtu.be/15MYKL4kqic" target="_blank">自主制作ボカロライブ</a></div>
       <div class="event-card"><a href="https://nnn.ed.jp/school_festival/zen_university/#zero5" target="_blank">磁石祭サブスタジオ演出</a></div>
     </section>
 
+    <!-- もっと詳しく -->
+    <section class="section show">
+      <h2>もっと詳しく見る</h2>
+      <div class="event-card"><a href="https://drive.google.com/drive/folders/15g5210U5aMGJrQ9osV_6bs5dG_CQW1us?usp=sharing" target="_blank">Google Drive：ポートフォリオ・自己紹介資料まとめ</a></div>
+    </section>
+
     <!-- スキル -->
-    <section class="section">
+    <section class="section show">
       <h2>スキル</h2>
       <table class="skill-table">
-        <tr><th>OS</th><td>Windows</td></tr>
-        <tr><th>映像編集</th><td>Premiere Pro, After Effects, AviUtl</td></tr>
-        <tr><th>3DCG</th><td>Blender</td></tr>
-        <tr><th>照明・音響</th><td>GrandMA3, REAPER, Audition</td></tr>
-        <tr><th>演出・AR</th><td>Unity, Resolume Arena</td></tr>
+        <tr>
+          <th>OS</th>
+          <td>Windows</td>
+        </tr>
+        <tr>
+          <th>映像編集</th>
+          <td>Premiere Pro, After Effects, AviUtl</td>
+        </tr>
+        <tr>
+          <th>3DCG</th>
+          <td>Blender</td>
+        </tr>
+        <tr>
+          <th>照明・音響</th>
+          <td>GrandMA3, REAPER, Audition</td>
+        </tr>
+        <tr>
+          <th>演出・AR</th>
+          <td>Unity, Resolume Arena</td>
+        </tr>
       </table>
     </section>
 
     <!-- SNS・連絡先 -->
-    <section class="section">
+    <section class="section show">
       <h2>SNS・連絡先</h2>
       <div class="sns-grid">
-        <a href="https://x.com/XR_KENYU" target="_blank" class="contact-button sns-x"><i class="fab fa-x-twitter"></i> X（旧Twitter）</a>
-        <a href="https://www.instagram.com/kenyu0211/" target="_blank" class="contact-button sns-instagram"><i class="fab fa-instagram"></i> Instagram</a>
-        <a href="mailto:kenyu02110211@gmail.com" class="contact-button sns-mail"><i class="fas fa-envelope"></i> kenyu02110211@gmail.com</a>
+        <a href="https://x.com/XR_KENYU" class="contact-button sns-x" target="_blank"><i class="fab fa-x-twitter"></i>X（旧Twitter）</a>
+        <a href="https://www.instagram.com/kenyu0211/" class="contact-button sns-instagram" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
+        <a href="mailto:kenyu02110211@gmail.com" class="contact-button sns-mail"><i class="fas fa-envelope"></i>kenyu02110211@gmail.com</a>
       </div>
     </section>
 
     <!-- これまでの歩み -->
-    <section class="section">
+    <section class="section show">
       <h2>これまでの歩み</h2>
       <div class="timeline-vertical">
-        <div class="timeline-entry"><div class="timeline-year">2022年</div><div class="timeline-desc"><a href="https://chokabuki.jp/2022chokaigi/" target="_blank">超歌舞伎2022 に衝撃を受ける</a></div></div>
-        <div class="timeline-entry"><div class="timeline-year">2025年</div><div class="timeline-desc"><a href="http://www.yokote-seiryou.net/" target="_blank">秋田県立横手清陵学院高校 卒業</a></div></div>
-        <div class="timeline-entry"><div class="timeline-year">同年</div><div class="timeline-desc"><a href="https://zen.ac.jp/" target="_blank">ZEN大学 入学</a></div></div>
+        <div class="timeline-entry">
+          <div class="timeline-year">2022年</div>
+          <div class="timeline-desc"><a href="https://chokabuki.jp/2022chokaigi/" target="_blank">超歌舞伎2022 に衝撃を受ける</a></div>
+        </div>
+        <div class="timeline-entry">
+          <div class="timeline-year">2025年</div>
+          <div class="timeline-desc"><a href="http://www.yokote-seiryou.net/" target="_blank">秋田県立横手清陵学院高校 卒業</a></div>
+        </div>
+        <div class="timeline-entry">
+          <div class="timeline-year">同年</div>
+          <div class="timeline-desc"><a href="https://zen.ac.jp/" target="_blank">ZEN大学 入学</a></div>
+        </div>
       </div>
     </section>
   </main>
@@ -93,6 +125,7 @@
         setTimeout(() => {
           document.getElementById("splash").style.display = "none";
           document.querySelector("main.container").style.display = "block";
+
           const sections = document.querySelectorAll(".section");
           const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -101,9 +134,10 @@
               }
             });
           }, { threshold: 0.2 });
+
           sections.forEach(section => observer.observe(section));
         }, 1000);
-      }, 1600);
+      }, 1400);
     });
   </script>
 </body>
