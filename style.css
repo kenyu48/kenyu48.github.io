@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 :root {
-  --color-bg: #f5f7fa;
-  --color-primary: #1649ff;
-  --color-accent: #0a1f5f;
-  --color-muted: #6b7280;
-  --color-card: #ffffff;
-  --color-border: #e0e0e0;
-  --font-serif: 'Noto Serif JP', serif;
+  --bg: #f5f7fa;
+  --primary: #0a84ff;
+  --text: #1e1e1e;
+  --muted: #6b7280;
+  --card: #ffffff;
+  --border: #e0e0e0;
 
   --radius: 16px;
-  --shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --font-main: 'Inter', sans-serif;
 }
 
 * {
@@ -20,9 +20,9 @@
 }
 
 body {
-  font-family: var(--font-serif);
-  background-color: var(--color-bg);
-  color: var(--color-accent);
+  background: var(--bg);
+  font-family: var(--font-main);
+  color: var(--text);
   padding: 40px 20px;
   line-height: 1.75;
 }
@@ -35,41 +35,42 @@ body {
   gap: 48px;
 }
 
-/* ヘッダー・プロフィール */
+/* Header */
 header {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
 }
 
 .profile-image {
   width: 72px;
   height: 72px;
-  object-fit: cover;
   border-radius: 50%;
-  border: 3px solid var(--color-primary);
+  object-fit: cover;
+  border: 3px solid var(--primary);
   box-shadow: var(--shadow);
 }
 
 h1 {
-  font-size: 2.6rem;
-  color: var(--color-primary);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--primary);
 }
 
-h2, h3 {
-  font-size: 1.6rem;
-  margin-bottom: 12px;
-  padding-bottom: 4px;
-  border-bottom: 2px solid var(--color-primary);
+h2 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 16px;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 6px;
 }
 
-/* カードセクション */
 section {
-  background: var(--color-card);
+  background: var(--card);
   padding: 28px;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--border);
   transition: transform 0.2s;
 }
 
@@ -77,66 +78,62 @@ section:hover {
   transform: translateY(-4px);
 }
 
-/* プロフィール詳細 */
+/* Profile list */
 .profile-info ul {
   list-style: none;
-  padding-left: 0;
+  padding: 0;
 }
-
 .profile-info li {
   margin-bottom: 10px;
-  font-weight: 500;
+  font-weight: 600;
 }
-
 .profile-info span {
-  color: var(--color-muted);
-  font-weight: normal;
+  font-weight: 400;
+  color: var(--muted);
   margin-left: 8px;
 }
 
-/* リスト系 */
+/* Lists */
 ul {
   list-style: none;
   padding-left: 0;
 }
-
 li::before {
-  content: "◉";
-  color: var(--color-primary);
-  margin-right: 8px;
+  content: "⮞";
+  color: var(--primary);
+  margin-right: 6px;
 }
 
-/* リンク */
+/* Links */
 a {
-  color: var(--color-primary);
+  color: var(--primary);
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
 }
 a:hover {
   text-decoration: underline;
 }
 
-/* 表 */
+/* Table */
 table {
   width: 100%;
   border-collapse: collapse;
-  border: 1px solid var(--color-border);
-  margin-top: 10px;
+  margin-top: 12px;
 }
 th, td {
   padding: 14px;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--border);
 }
 th {
-  background-color: var(--color-primary);
-  color: #fff;
-  font-weight: normal;
+  background-color: var(--primary);
+  color: white;
+  font-weight: 500;
 }
 tr:nth-child(even) {
-  background-color: #f0f4ff;
+  background-color: #f0f6ff;
 }
 
-/* レスポンシブ */
+/* Responsive */
 @media (max-width: 600px) {
   .profile-image {
     width: 56px;
