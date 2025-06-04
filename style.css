@@ -38,10 +38,11 @@ body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 64px;
+  transition: opacity 1s ease;
 }
 
-/* ローディング画面 */
+/* スプラッシュ画面 */
 #splash {
   position: fixed;
   top: 0;
@@ -53,22 +54,39 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  transition: opacity 1s ease;
+  transition: all 1.2s ease;
 }
-.splash-warning {
-  font-size: 2.2rem;
+.splash-logo {
+  font-size: 3rem;
   color: var(--accent-red);
-  text-align: center;
-  line-height: 1.5;
-  animation: warningBlink 0.9s infinite alternate;
   text-shadow:
     0 0 6px var(--accent-red),
     0 0 12px var(--accent-red),
     0 0 24px var(--accent-red);
+  animation: flicker 1.2s infinite alternate;
 }
-@keyframes warningBlink {
+@keyframes flicker {
   0% { opacity: 1; transform: scale(1); }
   100% { opacity: 0.6; transform: scale(1.05); }
+}
+
+/* スライドアウト */
+#splash.fade-out {
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+/* アニメーション（スクロール時） */
+.animate-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+  margin-bottom: 60px;
+}
+.animate-section.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ヘッダー */
@@ -96,7 +114,7 @@ header {
     0 0 8px var(--accent-purple);
 }
 
-/* セクションタイトル */
+/* セクション見出し */
 h2 {
   font-size: 1.4rem;
   margin-bottom: 16px;
@@ -108,7 +126,7 @@ h2 {
   text-shadow: 1px 1px 2px #000;
 }
 
-/* セクションカード */
+/* セクション枠 */
 section {
   background-color: var(--card-color);
   padding: 28px;
@@ -116,38 +134,26 @@ section {
   border: 1px solid var(--border-color);
   backdrop-filter: blur(6px);
   box-shadow: var(--shadow);
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.6s ease;
-}
-section.show {
-  opacity: 1;
-  transform: translateY(0);
 }
 
-/* リスト・プロフィール */
-.profile-info ul,
+/* プロフィールとリスト */
 ul {
   list-style: none;
   padding-left: 0;
 }
-.profile-info li,
-ul li {
+li {
   margin-bottom: 10px;
   font-weight: 600;
   text-shadow: 1px 1px 2px #000;
 }
-.profile-info span {
-  font-weight: 400;
-  color: var(--muted);
-  margin-left: 8px;
-}
-
-/* リストアイコン */
 li::before {
-  content: "▶";
+  content: \"▶\";
   color: var(--accent-purple);
   margin-right: 6px;
+}
+.profile-info span {
+  color: var(--muted);
+  margin-left: 8px;
 }
 
 /* リンク */
@@ -161,7 +167,7 @@ a:hover {
   text-shadow: 0 0 4px var(--accent-red);
 }
 
-/* 表（スキル・歴史） */
+/* 表 */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -182,7 +188,7 @@ tr:nth-child(even) {
   background-color: rgba(255, 255, 255, 0.03);
 }
 
-/* モバイル対応 */
+/* レスポンシブ */
 @media (max-width: 600px) {
   .profile-image {
     width: 56px;
