@@ -8,26 +8,45 @@
   --accent-red: #c0392b;
   --text-color: #ecf0f1;
   --muted: #7f8c8d;
-
   --font: 'Rajdhani', sans-serif;
   --radius: 12px;
   --shadow: 0 0 20px rgba(255, 0, 100, 0.15);
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* ローディング */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  animation: flash 2s infinite alternate;
+}
+.loader-text {
+  font-family: var(--font);
+  font-size: 1.4rem;
+  color: var(--accent-red);
+  text-shadow: 0 0 8px red;
+}
+@keyframes flash {
+  from {
+    background-color: black;
+  }
+  to {
+    background-color: #300;
+  }
 }
 
 body {
-  font-family: var(--font);
   background-color: var(--bg-color);
   background-image: linear-gradient(45deg, rgba(255,0,150,0.02) 25%, transparent 25%),
                     linear-gradient(-45deg, rgba(255,0,150,0.02) 25%, transparent 25%),
                     linear-gradient(45deg, transparent 75%, rgba(255,0,150,0.02) 75%),
                     linear-gradient(-45deg, transparent 75%, rgba(255,0,150,0.02) 75%);
   background-size: 40px 40px;
+  font-family: var(--font);
   color: var(--text-color);
   padding: 40px 20px;
   line-height: 1.8;
@@ -59,15 +78,15 @@ header {
 h1 {
   font-size: 2.5rem;
   color: var(--accent-purple);
-  text-shadow: 0 0 4px var(--accent-purple);
+  text-shadow: 1px 1px 2px black, 0 0 6px var(--accent-purple);
 }
 
 h2 {
   font-size: 1.4rem;
-  margin-bottom: 16px;
   border-bottom: 2px solid var(--accent-red);
   padding-bottom: 6px;
   color: var(--accent-red);
+  text-shadow: 0 0 4px black;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -84,20 +103,6 @@ section {
 section:hover {
   transform: translateY(-4px);
   border-color: var(--accent-purple);
-}
-
-.profile-info ul {
-  list-style: none;
-  padding-left: 0;
-}
-.profile-info li {
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-.profile-info span {
-  font-weight: 400;
-  color: var(--muted);
-  margin-left: 8px;
 }
 
 ul {
