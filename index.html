@@ -7,19 +7,18 @@
     <title>藤井健佑のポートフォリオ</title>
   </head>
   <body>
-    <!-- ローディング演出 -->
     <div id="loader">
-      <div class="loader-text">⚠ EMERGENCY SYSTEM ACTIVATED ⚠</div>
+      <div class="logo">SYSTEM BOOTING<br><span>EVANGELION STYLE</span></div>
     </div>
 
-    <div class="container" style="display: none;">
+    <div class="container" style="display:none;">
       <header>
         <img src="profile.jpg" alt="プロフィール画像" class="profile-image" />
-        <h1>藤井健佑</h1>
+        <h1 class="glow-text">藤井健佑</h1>
       </header>
 
       <section class="profile-info">
-        <h2>プロフィール</h2>
+        <h2 class="glow-text">プロフィール</h2>
         <ul>
           <li>名前：<span>藤井健佑</span></li>
           <li>拠点：<span>東京都足立区 ⇔ 秋田県横手市</span></li>
@@ -30,53 +29,47 @@
       </section>
 
       <section>
-        <h2>スキル - ソフトウェア分類</h2>
+        <h2 class="glow-text">スキル - 使用ソフト一覧</h2>
         <table>
-          <tr>
-            <th>映像編集</th>
-            <td>Premiere Pro, After Effects, AviUtl</td>
-          </tr>
-          <tr>
-            <th>音響編集</th>
-            <td>REAPER, Audition</td>
-          </tr>
-          <tr>
-            <th>3D/AR制作</th>
-            <td>Blender, Unity</td>
-          </tr>
-          <tr>
-            <th>ライブ演出</th>
-            <td>GrandMA3, Resolume Arena</td>
-          </tr>
-          <tr>
-            <th>OS</th>
-            <td>Windows</td>
-          </tr>
+          <tr><th>映像編集</th><td>Premiere Pro, After Effects, AviUtl</td></tr>
+          <tr><th>音響</th><td>REAPER, Audition</td></tr>
+          <tr><th>3D / モデリング</th><td>Blender</td></tr>
+          <tr><th>演出・舞台</th><td>GrandMA3, Resolume Arena</td></tr>
+          <tr><th>開発 / 表現</th><td>Unity</td></tr>
+          <tr><th>OS</th><td>Windows</td></tr>
         </table>
       </section>
 
       <section>
-        <h2>もっと詳しく見る</h2>
+        <h2 class="glow-text">もっと詳しく見る</h2>
         <p>
           これまでの活動記録や、企画資料、自己紹介スライドなどをまとめたGoogle Driveを公開しています。<br />
           より詳しいポートフォリオや資料をご覧になりたい方は、以下のリンクからご確認ください。
         </p>
         <ul>
-          <li><a href="https://drive.google.com/drive/folders/15g5210U5aMGJrQ9osV_6bs5dG_CQW1us?usp=sharing" target="_blank" rel="noopener noreferrer">Google Drive：ポートフォリオ・自己紹介資料まとめ</a></li>
+          <li>
+            <a
+              href="https://drive.google.com/drive/folders/15g5210U5aMGJrQ9osV_6bs5dG_CQW1us?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Google Drive：ポートフォリオ・自己紹介資料まとめ</a
+            >
+          </li>
         </ul>
       </section>
 
-      <!-- 以下セクション（関わったイベント / 作った作品 / 歴史 / 連絡先）省略していない場合は続けて挿入 -->
+      <!-- 他のセクションは省略可能。必要なら追加で記載します -->
     </div>
 
     <script>
-      window.addEventListener("load", () => {
-        const loader = document.getElementById("loader");
-        const container = document.querySelector(".container");
+      window.addEventListener('load', () => {
+        const loader = document.getElementById('loader');
+        const content = document.querySelector('.container');
         setTimeout(() => {
-          loader.style.display = "none";
-          container.style.display = "flex";
-        }, 2200); // ローディング時間調整
+          loader.style.opacity = '0';
+          loader.style.pointerEvents = 'none';
+          content.style.display = 'flex';
+        }, 2000); // 2秒演出
       });
     </script>
   </body>
