@@ -12,13 +12,19 @@
     </div>
 
     <main class="container" style="display: none">
-      <header class="section header-enhanced">
+      <header class="section header-enhanced nerv-frame">
+        <div class="nerv-line-top"></div>
         <div class="profile-image-wrapper">
           <img src="profile.jpg" alt="藤井健佑のプロフィール画像" class="profile-image" />
         </div>
-        <h1 class="title-name-enhanced">藤井健佑</h1>
+        <div class="header-text-block">
+          <h1 class="title-name-enhanced">藤井健佑</h1>
+          <span class="subtitle-name">KENYU FUJII</span>
+        </div>
+        <div class="nerv-line-bottom"></div>
       </header>
 
+      <!-- 以下はそのまま維持 -->
       <section class="section profile-info">
         <h2>プロフィール</h2>
         <ul>
@@ -62,26 +68,11 @@
       <section class="section">
         <h2>スキル</h2>
         <table>
-          <tr>
-            <th>OS</th>
-            <td>Windows</td>
-          </tr>
-          <tr>
-            <th>映像編集</th>
-            <td>Premiere Pro, After Effects, AviUtl</td>
-          </tr>
-          <tr>
-            <th>3DCG</th>
-            <td>Blender</td>
-          </tr>
-          <tr>
-            <th>照明・音響</th>
-            <td>GrandMA3, REAPER, Audition</td>
-          </tr>
-          <tr>
-            <th>演出・AR</th>
-            <td>Unity, Resolume Arena</td>
-          </tr>
+          <tr><th>OS</th><td>Windows</td></tr>
+          <tr><th>映像編集</th><td>Premiere Pro, After Effects, AviUtl</td></tr>
+          <tr><th>3DCG</th><td>Blender</td></tr>
+          <tr><th>照明・音響</th><td>GrandMA3, REAPER, Audition</td></tr>
+          <tr><th>演出・AR</th><td>Unity, Resolume Arena</td></tr>
         </table>
       </section>
 
@@ -97,24 +88,14 @@
       <section class="section">
         <h2>これまでの歩み</h2>
         <table>
-          <tr>
-            <th>2022年</th>
-            <td><a href="https://chokabuki.jp/2022chokaigi/" target="_blank" rel="noopener noreferrer">超歌舞伎2022</a> に衝撃を受ける</td>
-          </tr>
-          <tr>
-            <th>2025年</th>
-            <td><a href="http://www.yokote-seiryou.net/" target="_blank" rel="noopener noreferrer">秋田県立横手清陵学院高校</a> 卒業</td>
-          </tr>
-          <tr>
-            <th>同年</th>
-            <td><a href="https://zen.ac.jp/" target="_blank" rel="noopener noreferrer">ZEN大学</a> 入学</td>
-          </tr>
+          <tr><th>2022年</th><td><a href="https://chokabuki.jp/2022chokaigi/" target="_blank" rel="noopener noreferrer">超歌舞伎2022</a> に衝撃を受ける</td></tr>
+          <tr><th>2025年</th><td><a href="http://www.yokote-seiryou.net/" target="_blank" rel="noopener noreferrer">秋田県立横手清陵学院高校</a> 卒業</td></tr>
+          <tr><th>同年</th><td><a href="https://zen.ac.jp/" target="_blank" rel="noopener noreferrer">ZEN大学</a> 入学</td></tr>
         </table>
       </section>
     </main>
 
     <script>
-      // 起動アニメとスクロールアニメ
       window.addEventListener("load", () => {
         setTimeout(() => {
           document.getElementById("splash").style.opacity = 0;
