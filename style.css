@@ -1,33 +1,39 @@
-/* すでに適用済みの内容を維持しつつ、追加修正部分のみ記述 */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap');
 
-#intro-logo {
-  position: fixed;
-  inset: 0;
-  background: black;
+/* 全体設定 */
+body {
+  margin: 0;
+  font-family: 'Rajdhani', sans-serif;
+  background-color: #0b0c10;
+  color: #ecf0f1;
+}
+
+.container {
+  display: none;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* ヘッダー */
+header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  transition: opacity 0.5s ease;
-}
-.intro-text {
-  font-size: 3rem;
-  text-align: center;
-  color: #ff3c41;
-  font-family: 'Rajdhani', sans-serif;
-  letter-spacing: 0.1em;
-  animation: glitch 1.2s infinite alternate;
-  text-shadow: 0 0 8px red, 0 0 4px white;
-}
-@keyframes glitch {
-  0% { transform: translate(0); }
-  20% { transform: translate(-1px, 1px); }
-  40% { transform: translate(2px, -1px); }
-  60% { transform: translate(-2px, 2px); }
-  80% { transform: translate(1px, -2px); }
-  100% { transform: translate(0); }
+  gap: 20px;
 }
 
+.profile-image {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #8e44ad;
+}
+
+/* タイトル装飾 */
 .styled-name {
   font-size: 2.8rem;
   color: #8e44ad;
@@ -35,6 +41,7 @@
   padding: 0.25em 0.5em;
   text-shadow: 0 0 6px #8e44ad, 0 0 12px black;
 }
+
 .styled-name::before {
   content: "";
   position: absolute;
@@ -45,7 +52,90 @@
   background: linear-gradient(to right, #8e44ad, #c0392b);
   animation: border-glow 2s infinite alternate;
 }
+
 @keyframes border-glow {
   from { opacity: 0.4; }
   to { opacity: 1; }
+}
+
+/* セクション共通 */
+section {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 28px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+}
+
+/* セクション見出し */
+h2 {
+  color: #c0392b;
+  border-bottom: 2px solid #c0392b;
+  padding-bottom: 6px;
+  text-shadow: 0 0 4px black;
+}
+
+/* リストとテーブル */
+ul, table {
+  margin-top: 10px;
+}
+
+li::before {
+  content: "\25B6 ";
+  color: #8e44ad;
+}
+
+a {
+  color: #8e44ad;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px;
+}
+
+th {
+  background: #8e44ad;
+  color: white;
+}
+
+/* ローディングロゴ演出 */
+#intro-logo {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: opacity 0.5s ease;
+}
+
+.intro-text {
+  font-size: 3rem;
+  text-align: center;
+  color: #ff3c41;
+  font-family: 'Rajdhani', sans-serif;
+  letter-spacing: 0.1em;
+  animation: glitch 1.2s infinite alternate;
+  text-shadow: 0 0 8px red, 0 0 4px white;
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(2px, -1px); }
+  60% { transform: translate(-2px, 2px); }
+  80% { transform: translate(1px, -2px); }
+  100% { transform: translate(0); }
 }
