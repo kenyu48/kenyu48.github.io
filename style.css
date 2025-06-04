@@ -1,36 +1,56 @@
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap');
 
 :root {
-  --bg-color: #0b0c10;
-  --card-color: rgba(255, 255, 255, 0.04);
-  --border-color: rgba(255, 255, 255, 0.1);
-  --accent-purple: #8e44ad;
-  --accent-red: #c0392b;
-  --text-color: #ecf0f1;
-  --muted: #7f8c8d;
-
-  --font: 'Rajdhani', sans-serif;
+  --bg-color: #0a0a0a;
+  --card-color: rgba(255, 255, 255, 0.03);
+  --border-color: rgba(255, 0, 0, 0.2);
+  --accent-red: #ff2f4e;
+  --accent-purple: #6f42c1;
+  --text-color: #ffffff;
+  --muted: #999999;
+  --font-main: 'Rajdhani', sans-serif;
   --radius: 12px;
-  --shadow: 0 0 20px rgba(255, 0, 100, 0.15);
+  --shadow: 0 0 20px rgba(255, 0, 0, 0.2);
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* ローディング画面 */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: black;
+  color: var(--accent-red);
+  font-family: var(--font-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  z-index: 9999;
+  text-align: center;
+}
+#loader .logo {
+  animation: flicker 1.2s infinite;
+}
+#loader .logo span {
+  font-size: 0.8em;
+  display: block;
+  margin-top: 8px;
 }
 
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* 本文全体 */
 body {
-  font-family: var(--font);
   background-color: var(--bg-color);
-  background-image: linear-gradient(45deg, rgba(255,0,150,0.02) 25%, transparent 25%),
-                    linear-gradient(-45deg, rgba(255,0,150,0.02) 25%, transparent 25%),
-                    linear-gradient(45deg, transparent 75%, rgba(255,0,150,0.02) 75%),
-                    linear-gradient(-45deg, transparent 75%, rgba(255,0,150,0.02) 75%);
+  background-image: linear-gradient(45deg, rgba(255, 0, 0, 0.05) 25%, transparent 25%),
+                    linear-gradient(-45deg, rgba(255, 0, 0, 0.05) 25%, transparent 25%);
   background-size: 40px 40px;
+  font-family: var(--font-main);
   color: var(--text-color);
   padding: 40px 20px;
-  line-height: 1.8;
 }
 
 .container {
@@ -41,65 +61,42 @@ body {
   gap: 48px;
 }
 
-header {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+/* 見出しテキスト */
+h1, h2 {
+  color: var(--accent-red);
+  text-shadow: 2px 2px 2px black, -2px -2px 2px black;
+  text-transform: uppercase;
 }
 
+.glow-text {
+  text-shadow: 0 0 4px var(--accent-red), 0 0 10px var(--accent-purple);
+}
+
+/* プロフィール画像 */
 .profile-image {
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--accent-purple);
+  border: 2px solid var(--accent-purple);
   box-shadow: var(--shadow);
+  object-fit: cover;
 }
 
-h1 {
-  font-size: 2.5rem;
-  color: var(--accent-purple);
-  text-shadow: 0 0 4px var(--accent-purple);
-}
-
-h2 {
-  font-size: 1.4rem;
-  margin-bottom: 16px;
-  border-bottom: 2px solid var(--accent-red);
-  padding-bottom: 6px;
-  color: var(--accent-red);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
+/* セクションカード */
 section {
   background-color: var(--card-color);
-  padding: 28px;
-  border-radius: var(--radius);
   border: 1px solid var(--border-color);
-  backdrop-filter: blur(6px);
+  border-radius: var(--radius);
+  padding: 28px;
   box-shadow: var(--shadow);
-  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s ease;
 }
 section:hover {
   transform: translateY(-4px);
-  border-color: var(--accent-purple);
 }
 
-.profile-info ul {
-  list-style: none;
-  padding-left: 0;
-}
-.profile-info li {
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-.profile-info span {
-  font-weight: 400;
-  color: var(--muted);
-  margin-left: 8px;
-}
-
+/* リスト */
 ul {
   list-style: none;
   padding-left: 0;
@@ -107,9 +104,8 @@ ul {
 li::before {
   content: "▶";
   color: var(--accent-purple);
-  margin-right: 6px;
+  margin-right: 8px;
 }
-
 a {
   color: var(--accent-purple);
   font-weight: 600;
@@ -120,34 +116,32 @@ a:hover {
   text-shadow: 0 0 4px var(--accent-red);
 }
 
+/* テーブル */
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 12px;
-  color: var(--text-color);
 }
 th, td {
-  padding: 14px;
-  border: 1px solid var(--border-color);
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 th {
   background-color: var(--accent-purple);
   color: #fff;
-  font-weight: 600;
+  text-align: left;
 }
 tr:nth-child(even) {
   background-color: rgba(255, 255, 255, 0.02);
 }
 
+/* モバイル対応 */
 @media (max-width: 600px) {
   .profile-image {
     width: 56px;
     height: 56px;
   }
   h1 {
-    font-size: 2rem;
-  }
-  section {
-    padding: 20px;
+    font-size: 1.8rem;
   }
 }
