@@ -1,47 +1,193 @@
-/* 既存の style.css の内容に追加 */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap');
 
-/* NERV風アニメーション用 */
-.animate-section {
-  opacity: 0;
-  transform: scale(0.95);
-  border: 2px solid transparent;
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out, border-color 0.3s;
-  position: relative;
+:root {
+  --bg-color: #0a0a0f;
+  --text-color: #ffffff;
+  --accent-purple: #b36ff7;
+  --accent-red: #ff3c57;
+  --muted: #888;
+  --card-color: rgba(255, 255, 255, 0.04);
+  --border-color: rgba(255, 255, 255, 0.1);
+
+  --radius: 12px;
+  --shadow: 0 0 12px rgba(255, 0, 100, 0.2);
+  --font-main: 'Rajdhani', sans-serif;
 }
 
-.animate-section.in-view {
-  opacity: 1;
-  transform: scale(1);
-  border-color: #ff3c57;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.animate-section.in-view::before {
-  content: 'EMERGENCY';
-  position: absolute;
-  top: -14px;
-  left: 10px;
-  font-size: 0.8rem;
-  color: #ff3c57;
-  background: #000;
-  padding: 2px 6px;
-  border-radius: 4px;
-  box-shadow: 0 0 8px #ff3c57;
-  font-weight: bold;
-  font-family: 'Rajdhani', sans-serif;
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  background-image: linear-gradient(45deg, rgba(255,0,100,0.02) 25%, transparent 25%),
+                    linear-gradient(-45deg, rgba(255,0,100,0.02) 25%, transparent 25%),
+                    linear-gradient(45deg, transparent 75%, rgba(255,0,100,0.02) 75%),
+                    linear-gradient(-45deg, transparent 75%, rgba(255,0,100,0.02) 75%);
+  background-size: 40px 40px;
+  color: var(--text-color);
+  padding: 40px 20px;
+  line-height: 1.75;
 }
 
-/* splash ロゴ拡張 */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* ローディング画面 */
+#splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0a0a0f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.8s ease;
+}
 .splash-logo {
-  font-size: 3.5rem;
-  font-weight: bold;
-  letter-spacing: 0.15em;
+  font-size: 3rem;
   color: var(--accent-red);
-  animation: enterLogo 1.8s ease-out forwards;
-  transform: scale(0);
+  text-shadow:
+    0 0 6px var(--accent-red),
+    0 0 12px var(--accent-red),
+    0 0 24px var(--accent-red);
+  animation: flicker 1.5s infinite alternate;
+}
+@keyframes flicker {
+  0% { opacity: 1; }
+  100% { opacity: 0.6; }
 }
 
-@keyframes enterLogo {
-  0% { opacity: 0; transform: scale(0); }
-  50% { opacity: 1; transform: scale(1.2); }
-  100% { transform: scale(1); }
+/* ヘッダー */
+header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.profile-image {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent-purple);
+  box-shadow: var(--shadow);
+}
+.title-name {
+  font-size: 2.5rem;
+  color: var(--accent-purple);
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
+    0 0 8px var(--accent-purple);
+}
+
+/* セクションタイトル */
+h2 {
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+  border-bottom: 2px solid var(--accent-red);
+  padding-bottom: 6px;
+  color: var(--accent-red);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* セクションカード */
+section {
+  background-color: var(--card-color);
+  padding: 28px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+section:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-purple);
+}
+
+/* リスト・プロフィール */
+.profile-info ul,
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+.profile-info li,
+ul li {
+  margin-bottom: 10px;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px #000;
+}
+.profile-info span {
+  font-weight: 400;
+  color: var(--muted);
+  margin-left: 8px;
+}
+
+/* リストアイコン */
+li::before {
+  content: "▶";
+  color: var(--accent-purple);
+  margin-right: 6px;
+}
+
+/* リンク */
+a {
+  color: var(--accent-purple);
+  font-weight: 600;
+  text-decoration: none;
+}
+a:hover {
+  color: var(--accent-red);
+  text-shadow: 0 0 4px var(--accent-red);
+}
+
+/* 表（スキル・歴史） */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  color: var(--text-color);
+}
+th, td {
+  padding: 14px;
+  border: 1px solid var(--border-color);
+  text-shadow: 1px 1px 1px #000;
+}
+th {
+  background-color: var(--accent-purple);
+  color: #fff;
+  font-weight: 600;
+}
+tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* モバイル対応 */
+@media (max-width: 600px) {
+  .profile-image {
+    width: 56px;
+    height: 56px;
+  }
+  .title-name {
+    font-size: 2rem;
+  }
+  section {
+    padding: 20px;
+  }
 }
