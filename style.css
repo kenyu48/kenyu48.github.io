@@ -212,9 +212,7 @@ th {
   color: var(--accent-purple);
 }
 
-/* ================= */
-/* SNS / Contact     */
-/* ================= */
+/* SNS */
 .contact-links {
   list-style: none;
   padding: 0;
@@ -241,6 +239,7 @@ th {
 .contact-button i, .contact-email i {
   margin-right: 8px;
 }
+
 
 /* ================= */
 /* Timeline / 歩み     */
