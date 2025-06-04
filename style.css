@@ -29,7 +29,7 @@ body {
                     linear-gradient(-45deg, transparent 75%, rgba(255,0,100,0.02) 75%);
   background-size: 40px 40px;
   color: var(--text-color);
-  padding: 60px 80px; /* ここを変更: 上下60px, 左右80pxの余白 */
+  padding: 80px 120px; /* ここをさらに広げる (上下80px, 左右120px) */
   line-height: 1.75;
 }
 
@@ -38,7 +38,7 @@ body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 72px; /* ここを変更: 各セクション間の隙間を72pxに */
+  gap: 100px; /* ここをさらに広げる (各セクション間100px) */
 }
 
 /* ローディング画面 */
@@ -111,7 +111,7 @@ h2 {
 /* セクションカード */
 section {
   background-color: var(--card-color);
-  padding: 48px; /* ここを変更: 各セクションの内側の余白を48pxに */
+  padding: 60px; /* ここをさらに広げる (セクションの内側60px) */
   border-radius: var(--radius);
   border: 1px solid var(--border-color);
   backdrop-filter: blur(6px);
