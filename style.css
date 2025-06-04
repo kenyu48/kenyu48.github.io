@@ -41,7 +41,7 @@ body {
   gap: 400px;
 }
 
-/* ========== ローディング ========== */
+/* ローディング画面 */
 #splash {
   position: fixed;
   top: 0;
@@ -55,6 +55,7 @@ body {
   z-index: 9999;
   transition: opacity 1s ease;
 }
+
 .splash-warning {
   font-size: 2.2rem;
   color: var(--accent-red);
@@ -66,92 +67,75 @@ body {
     0 0 12px var(--accent-red),
     0 0 24px var(--accent-red);
 }
+
 @keyframes warningBlink {
   0% { opacity: 1; transform: scale(1); }
   100% { opacity: 0.6; transform: scale(1.05); }
 }
 
-/* ========== ヘッダー ========== */
+/* =================== */
+/*     ヘッダー構成     */
+/* =================== */
 .header-enhanced {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  position: relative;
-  padding: 40px;
+  padding: 0;
   border-radius: var(--radius);
 }
-.header-enhanced.nerv-frame {
-  border: 2px solid var(--accent-purple);
-  background: linear-gradient(to right, rgba(179,111,247,0.08), rgba(255,60,87,0.04));
-  box-shadow: 0 0 20px var(--accent-purple);
-  overflow: hidden;
-  position: relative;
-}
-.nerv-line-top,
-.nerv-line-bottom {
-  height: 2px;
-  position: absolute;
-  left: 0;
+
+.header-split {
+  display: flex;
   width: 100%;
-}
-.nerv-line-top {
-  top: 0;
-  background: linear-gradient(to right, var(--accent-red), transparent 60%);
-}
-.nerv-line-bottom {
-  bottom: 0;
-  background: linear-gradient(to right, transparent 40%, var(--accent-red));
-}
-
-.profile-image-wrapper {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
+  border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 0 12px var(--accent-red);
-  border: 2px solid var(--accent-red);
-  flex-shrink: 0;
-  transition: transform 0.4s;
-}
-.profile-image-wrapper:hover {
-  transform: scale(1.08);
+  border: 2px solid var(--accent-purple);
+  box-shadow: 0 0 20px var(--accent-purple);
 }
 
-.header-text-block {
+.profile-block {
+  width: 35%;
+  background: linear-gradient(to bottom right, #111, #222);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.profile-image-large {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid var(--accent-red);
+  box-shadow: 0 0 16px var(--accent-red);
+  object-fit: cover;
+}
+
+.name-block {
+  width: 65%;
+  background: #f2c744;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: left;
-  padding-top: 8px;
+  padding: 20px 30px;
+  color: #000;
 }
 
-.title-name-enhanced {
-  font-size: 3.8rem;
+.title-name-split {
+  font-size: 2.8rem;
   font-weight: 700;
-  color: var(--accent-purple);
-  letter-spacing: 2px;
   margin-bottom: 6px;
-  text-shadow: 
-    0 0 2px #000,
-    0 0 6px var(--accent-purple),
-    0 0 10px var(--accent-purple);
+  color: #000;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
 }
 
-.subtitle-name {
+.subtitle-name-split {
   font-size: 1.2rem;
-  color: #cfcfcf;
-  font-weight: 400;
-  letter-spacing: 1.5px;
-  margin-top: 0;
-  display: block;
+  font-weight: 500;
+  color: #333;
+  letter-spacing: 1px;
 }
 
-.subtitle-centered {
-  text-align: left;
-  margin-left: 2px;
-}
-
-/* ========== セクション ========== */
+/* =================== */
+/*     セクション表示     */
+/* =================== */
 .section {
   background: var(--card-color);
   border: 1px solid var(--border-color);
@@ -162,6 +146,7 @@ body {
   transform: translateY(20px);
   transition: all 0.6s ease-out;
 }
+
 .section.show {
   opacity: 1;
   transform: translateY(0);
@@ -179,13 +164,16 @@ body {
   list-style: none;
   padding-left: 0;
 }
+
 .section li {
   margin-bottom: 10px;
 }
+
 .section li a {
   color: var(--accent-red);
   text-decoration: none;
 }
+
 .section li a:hover {
   text-decoration: underline;
 }
@@ -194,12 +182,14 @@ body {
   width: 100%;
   border-collapse: collapse;
 }
+
 .section th,
 .section td {
   padding: 8px 12px;
   border-bottom: 1px solid var(--border-color);
   text-align: left;
 }
+
 .section th {
   color: var(--accent-purple);
   width: 120px;
