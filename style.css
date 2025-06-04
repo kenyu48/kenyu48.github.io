@@ -40,14 +40,6 @@ body {
   gap: 400px;
 }
 
-a {
-  color: var(--accent-purple);
-  text-decoration: underline;
-}
-a:hover {
-  color: var(--accent-red);
-}
-
 /* ローディング画面 */
 #splash {
   position: fixed;
@@ -80,17 +72,21 @@ a:hover {
 /* ========================= */
 /*       ヘッダー強化        */
 /* ========================= */
-.header-enhanced.nerv-frame {
+.header-enhanced {
   display: flex;
   align-items: center;
   gap: 30px;
   position: relative;
   padding: 40px;
   border-radius: var(--radius);
-  background: linear-gradient(to right, rgba(255,0,100,0.05), rgba(255,0,100,0.01));
-  border: 2px solid var(--accent-red);
-  box-shadow: 0 0 20px var(--accent-red);
+}
+
+.nerv-frame {
+  background: rgba(255, 255, 255, 0.02);
+  border: 2px solid var(--accent-purple);
+  box-shadow: 0 0 15px var(--accent-purple);
   overflow: hidden;
+  animation: headerFadeIn 1s ease-out forwards;
 }
 
 .nerv-line-top,
@@ -99,13 +95,14 @@ a:hover {
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(to right, var(--accent-red), transparent);
+  background: linear-gradient(to right, var(--accent-red), transparent 60%);
 }
 .nerv-line-top {
   top: 0;
 }
 .nerv-line-bottom {
   bottom: 0;
+  background: linear-gradient(to right, transparent 40%, var(--accent-red));
 }
 
 .profile-image-wrapper {
@@ -135,13 +132,15 @@ a:hover {
   letter-spacing: 2px;
   color: var(--accent-purple);
   text-shadow:
-    0 0 3px var(--accent-purple),
-    0 0 5px var(--accent-purple),
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
     0 0 10px var(--accent-purple);
+  animation: slideInLeft 1s ease-out 0.5s both;
   border-bottom: 2px solid var(--accent-purple);
   padding-bottom: 6px;
   margin-bottom: 6px;
-  animation: slideInLeft 1s ease-out 0.5s both;
 }
 
 .subtitle-name {
@@ -149,9 +148,7 @@ a:hover {
   font-weight: bold;
   color: var(--accent-red);
   letter-spacing: 1.5px;
-  text-shadow:
-    0 0 3px var(--accent-red),
-    0 0 6px var(--accent-red);
+  text-shadow: 0 0 3px var(--accent-red), 0 0 6px var(--accent-red);
 }
 
 /* タイピング風アニメーション */
@@ -162,14 +159,6 @@ a:hover {
   animation:
     typing 2s steps(20, end),
     blink-caret 0.75s step-end infinite;
-}
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: var(--accent-red) }
 }
 
 /* アニメーション */
@@ -183,13 +172,21 @@ a:hover {
     transform: translateX(0);
   }
 }
-
-.section.show {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 1s ease, transform 1s ease;
+@keyframes headerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-.section {
-  opacity: 0;
-  transform: translateY(50px);
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--accent-red); }
 }
