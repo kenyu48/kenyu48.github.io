@@ -123,13 +123,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: left;
 }
 
 .title-name-enhanced {
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   font-weight: 700;
-  letter-spacing: 2px;
   color: var(--accent-purple);
   text-shadow:
     -1px -1px 0 #000,
@@ -138,17 +136,13 @@ body {
     1px 1px 0 #000,
     0 0 10px var(--accent-purple);
   animation: slideInLeft 1s ease-out 0.5s both;
-  border-bottom: 2px solid var(--accent-purple);
-  padding-bottom: 6px;
-  margin-bottom: 6px;
 }
 
 .subtitle-name {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: var(--accent-red);
-  letter-spacing: 1.5px;
-  text-shadow: 0 0 3px var(--accent-red), 0 0 6px var(--accent-red);
+  font-size: 1.2rem;
+  color: var(--muted);
+  text-shadow: 0 0 6px rgba(255, 0, 0, 0.3);
+  margin-top: 6px;
 }
 
 /* タイピング風アニメーション */
@@ -172,6 +166,7 @@ body {
     transform: translateX(0);
   }
 }
+
 @keyframes headerFadeIn {
   from {
     opacity: 0;
@@ -179,14 +174,4 @@ body {
   }
   to {
     opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: var(--accent-red); }
-}
+    trans
