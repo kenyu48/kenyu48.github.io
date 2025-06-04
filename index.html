@@ -5,83 +5,151 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="style.css" rel="stylesheet" />
   <title>藤井健佑のポートフォリオ</title>
+  <style>
+    /* ローディングロゴ */
+    #intro-logo {
+      position: fixed;
+      inset: 0;
+      background: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      transition: opacity 0.5s ease;
+    }
+    .intro-text {
+      font-size: 3rem;
+      text-align: center;
+      color: #ff3c41;
+      font-family: 'Rajdhani', sans-serif;
+      letter-spacing: 0.1em;
+      animation: glitch 1.2s infinite alternate;
+      text-shadow: 0 0 8px red, 0 0 4px white;
+    }
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-1px, 1px); }
+      40% { transform: translate(2px, -1px); }
+      60% { transform: translate(-2px, 2px); }
+      80% { transform: translate(1px, -2px); }
+      100% { transform: translate(0); }
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Rajdhani', sans-serif;
+      background-color: #0b0c10;
+      color: #ecf0f1;
+    }
+    .container {
+      display: none;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .profile-image {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #8e44ad;
+    }
+    .styled-name {
+      font-size: 2.8rem;
+      color: #8e44ad;
+      position: relative;
+      padding: 0.25em 0.5em;
+      text-shadow: 0 0 6px #8e44ad, 0 0 12px black;
+    }
+    .styled-name::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(to right, #8e44ad, #c0392b);
+      animation: border-glow 2s infinite alternate;
+    }
+    @keyframes border-glow {
+      from { opacity: 0.4; }
+      to { opacity: 1; }
+    }
+    section {
+      background: rgba(255, 255, 255, 0.04);
+      padding: 28px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(6px);
+    }
+    h2 {
+      color: #c0392b;
+      border-bottom: 2px solid #c0392b;
+      padding-bottom: 6px;
+    }
+    ul, table {
+      margin-top: 10px;
+    }
+    li::before {
+      content: "\25B6 ";
+      color: #8e44ad;
+    }
+    a {
+      color: #8e44ad;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 12px;
+    }
+    th {
+      background: #8e44ad;
+      color: white;
+    }
+  </style>
 </head>
 <body>
-  <!-- ローディング画面 -->
   <div id="intro-logo">
-    <div class="intro-text">FUJII<br>KENYU</div>
+    <div class="intro-text">FUJII<br>KENSUKE</div>
   </div>
 
-  <div class="container" style="display: none;">
+  <div class="container">
     <header>
       <img src="profile.jpg" alt="プロフィール画像" class="profile-image" />
       <h1 class="styled-name">藤井 健佑</h1>
     </header>
 
-    <section class="profile-info">
-      <h2>プロフィール</h2>
-      <ul>
-        <li>名前：<span>藤井健佑</span></li>
-        <li>拠点：<span>東京都足立区 ⇔ 秋田県横手市</span></li>
-        <li>得意分野：<span>演出・企画・AR・イベントプロデュース</span></li>
-        <li>特徴：<span>構想力重視、テクノロジー融合型演出</span></li>
-        <li>趣味：<span>舞台鑑賞、映像編集、社会構造分析</span></li>
-      </ul>
-    </section>
-
     <section>
-      <h2>スキル - ソフトウェア分類</h2>
+      <h2>これまでの歩み</h2>
       <table>
-        <tr><th>映像編集</th><td>Premiere Pro, After Effects, AviUtl</td></tr>
-        <tr><th>音響編集</th><td>REAPER, Audition</td></tr>
-        <tr><th>3D/AR制作</th><td>Blender, Unity</td></tr>
-        <tr><th>ライブ演出</th><td>GrandMA3, Resolume Arena</td></tr>
-        <tr><th>OS</th><td>Windows</td></tr>
+        <tr><th>2022年</th><td><a href="https://chokabuki.jp/2022chokaigi/" target="_blank">超歌舞伎2022</a> に衝撃を受ける</td></tr>
+        <tr><th>2025年</th><td><a href="http://www.yokote-seiryou.net/" target="_blank">横手清陵学院高校</a> 卒業</td></tr>
+        <tr><th>同年</th><td><a href="https://zen.ac.jp/" target="_blank">ZEN大学</a> 入学</td></tr>
       </table>
-    </section>
-
-    <section>
-      <h2>関わったイベント</h2>
-      <ul>
-        <li><a href="https://km1world.com/japantotheworld/" target="_blank" rel="noopener noreferrer">JAPAN to the World</a></li>
-        <li><a href="https://www.instagram.com/y_akamonmatsuri/" target="_blank" rel="noopener noreferrer">赤門祭</a></li>
-        <li><a href="https://www.nhk.jp/p/ts/L2521XN4N5/episode/te/ZWN6VQ8PN6/" target="_blank" rel="noopener noreferrer">秋田君の声が聴きたい</a></li>
-        <li><a href="https://nnn.ed.jp/school_festival/" target="_blank" rel="noopener noreferrer">ZEN大学 磁石祭</a></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>作った作品</h2>
-      <ul>
-        <li><a href="https://youtu.be/15MYKL4kqic" target="_blank" rel="noopener noreferrer">自主制作ボカロライブ</a></li>
-        <li><a href="https://nnn.ed.jp/school_festival/zen_university/#zero5" target="_blank" rel="noopener noreferrer">磁石祭サブスタジオ演出</a></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>もっと詳しく見る</h2>
-      <p>活動記録や企画資料、自己紹介スライドをまとめたGoogle Driveを公開しています。</p>
-      <ul>
-        <li><a href="https://drive.google.com/drive/folders/15g5210U5aMGJrQ9osV_6bs5dG_CQW1us?usp=sharing" target="_blank" rel="noopener noreferrer">Google Drive：ポートフォリオ資料</a></li>
-      </ul>
     </section>
 
     <section>
       <h2>連絡先</h2>
       <ul>
-        <li><a href="https://x.com/XR_KENYU" target="_blank" rel="noopener noreferrer">X（旧Twitter）</a></li>
-        <li><a href="https://www.instagram.com/kenyu0211/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a href="https://x.com/XR_KENYU" target="_blank">X（旧Twitter）</a></li>
+        <li><a href="https://www.instagram.com/kenyu0211/" target="_blank">Instagram</a></li>
         <li><a href="mailto:kenyu02110211@gmail.com">Mail</a></li>
       </ul>
-    </section>
-
-    <section>
-      <h2>これまでの歩み</h2>
-      <table>
-        <tr><th>2022年</th><td><a href="https://chokabuki.jp/2022chokaigi/" target="_blank" rel="noopener noreferrer">超歌舞伎2022</a> に衝撃を受ける</td></tr>
-        <tr><th>2025年</th><td><a href="http://www.yokote-seiryou.net/" target="_blank" rel="noopener noreferrer">横手清陵学院高校</a> 卒業</td></tr>
-        <tr><th>同年</th><td><a href="https://zen.ac.jp/" target="_blank" rel="noopener noreferrer">ZEN大学</a> 入学</td></tr>
-      </table>
     </section>
   </div>
 
