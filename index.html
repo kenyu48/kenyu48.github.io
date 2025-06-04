@@ -1,141 +1,150 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>藤井健佑 - ポートフォリオサイト</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>藤井健佑のポートフォリオ</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <div id="splash">
+      <div class="splash-warning">EMERGENCY<br>起動シーケンス開始</div>
+    </div>
 
-  <!-- 背景 -->
-  <svg class="background-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-    <defs>
-      <linearGradient id="grad" x1="0" x2="1" y1="0" y2="1">
-        <stop offset="0%" stop-color="#6fe7ff" stop-opacity="0.05" />
-        <stop offset="100%" stop-color="#b36ff7" stop-opacity="0.05" />
-      </linearGradient>
-    </defs>
-    <rect x="0" y="0" width="100" height="100" fill="url(#grad)" />
-    <g stroke="url(#grad)" stroke-width="0.2">
-      <path d="M10,0 L10,100" />
-      <path d="M30,0 L30,100" />
-      <path d="M50,0 L50,100" />
-      <path d="M70,0 L70,100" />
-      <path d="M90,0 L90,100" />
-    </g>
-  </svg>
-
-  <!-- スプラッシュ -->
-  <div id="splash">
-    <div class="splash-warning">EMERGENCY<br>起動シーケンス開始</div>
-  </div>
-
-  <main class="container" style="display: none">
-
-    <!-- ヘッダー -->
-    <header class="header-split">
-      <img src="profile.jpg" alt="藤井健佑の写真" class="profile-image-square" />
-      <div class="name-block-dark">
-        <h1 class="title-name-split">藤井健佑</h1>
-        <span class="subtitle-name-split">KENYU FUJII</span>
-        <div class="site-tagline">Official Portfolio Site</div>
-      </div>
-    </header>
-
-    <!-- プロフィール -->
-    <section class="section">
-      <h2>プロフィール</h2>
-      <ul class="profile-list">
-        <li><strong><i class="fa-solid fa-id-badge"></i> 名前：</strong>藤井健佑</li>
-        <li><strong><i class="fa-solid fa-location-dot"></i> 拠点：</strong>東京都足立区 ⇔ 秋田県横手市</li>
-        <li><strong><i class="fa-solid fa-star"></i> 得意分野：</strong>演出・企画・AR・イベントプロデュース</li>
-        <li><strong><i class="fa-solid fa-lightbulb"></i> 特徴：</strong>構想力重視、テクノロジー融合型演出</li>
-        <li><strong><i class="fa-solid fa-masks-theater"></i> 趣味：</strong>舞台鑑賞、映像編集、社会構造分析</li>
-      </ul>
-    </section>
-
-    <!-- 関わったイベント -->
-    <section class="section">
-      <h2>関わったイベント</h2>
-      <div class="event-card"><a href="https://km1world.com/japantotheworld/" target="_blank"><i class="fa-solid fa-link"></i> JAPAN to the World</a></div>
-      <div class="event-card"><a href="https://www.instagram.com/y_akamonmatsuri/" target="_blank"><i class="fa-brands fa-instagram"></i> 赤門祭</a></div>
-      <div class="event-card"><a href="https://www.nhk.jp/p/ts/L2521XN4N5/episode/te/ZWN6VQ8PN6/" target="_blank"><i class="fa-solid fa-tv"></i> NHKスペシャル『秋田君の声が聴きたい』</a></div>
-      <div class="event-card"><a href="https://nnn.ed.jp/school_festival/" target="_blank"><i class="fa-solid fa-graduation-cap"></i> ZEN大学 磁石祭</a></div>
-    </section>
-
-    <!-- 作った作品 -->
-    <section class="section">
-      <h2>作った作品</h2>
-      <div class="event-card"><a href="https://youtu.be/15MYKL4kqic" target="_blank"><i class="fa-brands fa-youtube"></i> 自主制作ボカロライブ</a></div>
-      <div class="event-card"><a href="https://nnn.ed.jp/school_festival/zen_university/#zero5" target="_blank"><i class="fa-solid fa-video"></i> 磁石祭サブスタジオ演出</a></div>
-    </section>
-
-    <!-- SNS・連絡先 -->
-    <section class="section">
-      <h2>SNS・連絡先</h2>
-      <div class="sns-grid">
-        <a class="contact-button sns-x" href="https://x.com/XR_KENYU" target="_blank"><i class="fa-brands fa-x-twitter"></i> X（旧Twitter）</a>
-        <a class="contact-button sns-instagram" href="https://www.instagram.com/kenyu0211/" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
-        <span class="contact-button sns-email"><i class="fa-solid fa-envelope"></i> kenyu02110211@gmail.com</span>
-      </div>
-    </section>
-
-    <!-- スキル -->
-    <section class="section">
-      <h2>スキル</h2>
-      <table>
-        <tr><th>OS</th><td>Windows</td></tr>
-        <tr><th>映像編集</th><td>Premiere Pro, After Effects, AviUtl</td></tr>
-        <tr><th>3DCG</th><td>Blender</td></tr>
-        <tr><th>照明・音響</th><td>GrandMA3, REAPER, Audition</td></tr>
-        <tr><th>演出・AR</th><td>Unity, Resolume Arena</td></tr>
-      </table>
-    </section>
-
-    <!-- これまでの歩み -->
-    <section class="section">
-      <h2>これまでの歩み</h2>
-      <div class="timeline-vertical">
-        <div class="timeline-entry">
-          <div class="timeline-year">2022年</div>
-          <div class="timeline-desc"><a href="https://chokabuki.jp/2022chokaigi/" target="_blank">超歌舞伎2022 に衝撃を受ける</a></div>
+    <main class="container" style="display: none">
+      <header class="header-split">
+        <img src="profile.jpg" alt="プロフィール画像" class="profile-image-square" />
+        <div class="name-block-dark">
+          <h1 class="title-name-split">藤井健佑</h1>
+          <div class="subtitle-name-split">KENYU FUJII</div>
+          <div class="site-tagline">未来型演出×AR×イベントプロデューサー</div>
         </div>
-        <div class="timeline-entry">
-          <div class="timeline-year">2025年</div>
-          <div class="timeline-desc"><a href="http://www.yokote-seiryou.net/" target="_blank">秋田県立横手清陵学院高校 卒業</a></div>
-        </div>
-        <div class="timeline-entry">
-          <div class="timeline-year">2025年</div>
-          <div class="timeline-desc"><a href="https://zen.ac.jp/" target="_blank">ZEN大学 入学</a></div>
-        </div>
-      </div>
-    </section>
+      </header>
 
-  </main>
+      <section class="section">
+        <h2>プロフィール</h2>
+        <ul class="profile-list">
+          <li><strong>名前：</strong>藤井健佑</li>
+          <li><strong>拠点：</strong>東京都足立区 ⇔ 秋田県横手市</li>
+          <li><strong>得意分野：</strong>演出・企画・AR・イベントプロデュース</li>
+          <li><strong>特徴：</strong>構想力重視、テクノロジー融合型演出</li>
+          <li><strong>趣味：</strong>舞台鑑賞、映像編集、社会構造分析</li>
+        </ul>
+      </section>
 
-  <!-- JS -->
-  <script>
-    window.addEventListener("load", () => {
-      setTimeout(() => {
-        document.getElementById("splash").style.opacity = 0;
+      <section class="section">
+        <h2>関わったイベント</h2>
+        <div class="event-card">
+          <a href="https://km1world.com/japantotheworld/" target="_blank">JAPAN to the World</a>
+        </div>
+        <div class="event-card">
+          <a href="https://www.instagram.com/y_akamonmatsuri/" target="_blank">赤門祭</a>
+        </div>
+        <div class="event-card">
+          <a href="https://www.nhk.jp/p/ts/L2521XN4N5/episode/te/ZWN6VQ8PN6/" target="_blank">NHKスペシャル『秋田君の声が聴きたい』</a>
+        </div>
+        <div class="event-card">
+          <a href="https://nnn.ed.jp/school_festival/" target="_blank">ZEN大学 磁石祭</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>作った作品</h2>
+        <div class="event-card">
+          <a href="https://youtu.be/15MYKL4kqic" target="_blank">自主制作ボカロライブ</a>
+        </div>
+        <div class="event-card">
+          <a href="https://nnn.ed.jp/school_festival/zen_university/#zero5" target="_blank">磁石祭サブスタジオ演出</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>もっと詳しく見る</h2>
+        <div class="event-card">
+          <a href="https://drive.google.com/drive/folders/15g5210U5aMGJrQ9osV_6bs5dG_CQW1us?usp=sharing" target="_blank">Google Drive：ポートフォリオ・自己紹介資料まとめ</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>スキル</h2>
+        <div class="skill-list">
+          <div class="skill-item">
+            <h3>OS</h3>
+            <p>Windows</p>
+          </div>
+          <div class="skill-item">
+            <h3>映像編集</h3>
+            <p>Premiere Pro / After Effects / AviUtl</p>
+          </div>
+          <div class="skill-item">
+            <h3>3DCG</h3>
+            <p>Blender</p>
+          </div>
+          <div class="skill-item">
+            <h3>照明・音響</h3>
+            <p>GrandMA3 / REAPER / Audition</p>
+          </div>
+          <div class="skill-item">
+            <h3>演出・AR</h3>
+            <p>Unity / Resolume Arena</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>SNS・連絡先</h2>
+        <div class="sns-grid">
+          <a href="https://x.com/XR_KENYU" target="_blank" class="contact-button sns-x">
+            <i class="fab fa-x-twitter"></i> X（旧Twitter）
+          </a>
+          <a href="https://www.instagram.com/kenyu0211/" target="_blank" class="contact-button sns-instagram">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+          <a href="mailto:kenyu02110211@gmail.com" class="contact-button sns-email">
+            <i class="fas fa-envelope"></i> kenyu02110211@gmail.com
+          </a>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>これまでの歩み</h2>
+        <div class="timeline-vertical">
+          <div class="timeline-entry">
+            <div class="timeline-year">2022年</div>
+            <div class="timeline-desc"><a href="https://chokabuki.jp/2022chokaigi/" target="_blank">超歌舞伎2022 に衝撃を受ける</a></div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-year">2025年</div>
+            <div class="timeline-desc"><a href="http://www.yokote-seiryou.net/" target="_blank">秋田県立横手清陵学院高校 卒業</a></div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-year">同年</div>
+            <div class="timeline-desc"><a href="https://zen.ac.jp/" target="_blank">ZEN大学 入学</a></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      window.addEventListener("load", () => {
         setTimeout(() => {
-          document.getElementById("splash").style.display = "none";
-          document.querySelector("main.container").style.display = "block";
-          const sections = document.querySelectorAll(".section");
-          const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-              }
-            });
-          }, { threshold: 0.2 });
-          sections.forEach(section => observer.observe(section));
-        }, 1000);
-      }, 1600);
-    });
-  </script>
-
-</body>
+          document.getElementById("splash").style.opacity = 0;
+          setTimeout(() => {
+            document.getElementById("splash").style.display = "none";
+            document.querySelector("main.container").style.display = "block";
+            const sections = document.querySelectorAll(".section");
+            const observer = new IntersectionObserver(entries => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("show");
+                }
+              });
+            }, { threshold: 0.2 });
+            sections.forEach(section => observer.observe(section));
+          }, 1000);
+        }, 1600);
+      });
+    </script>
+  </body>
 </html>
