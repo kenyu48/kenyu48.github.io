@@ -7,14 +7,13 @@
     <title>藤井健佑のポートフォリオ</title>
   </head>
   <body>
-    <!-- サイト入出時ロゴ表示 -->
     <div id="splash">
       <div class="splash-warning">EMERGENCY<br>起動シーケンス開始</div>
     </div>
 
-    <div class="container" style="display: none">
+    <main class="container" style="display: none">
       <header class="section">
-        <img src="profile.jpg" alt="プロフィール画像" class="profile-image" />
+        <img src="profile.jpg" alt="藤井健佑のプロフィール画像" class="profile-image" />
         <h1 class="title-name">藤井健佑</h1>
       </header>
 
@@ -34,7 +33,7 @@
         <ul>
           <li><a href="https://km1world.com/japantotheworld/" target="_blank" rel="noopener noreferrer">JAPAN to the World</a></li>
           <li><a href="https://www.instagram.com/y_akamonmatsuri/" target="_blank" rel="noopener noreferrer">赤門祭</a></li>
-          <li><a href="https://www.nhk.jp/p/ts/L2521XN4N5/episode/te/ZWN6VQ8PN6/" target="_blank" rel="noopener noreferrer">秋田君の声が聴きたい</a></li>
+          <li><a href="https://www.nhk.jp/p/ts/L2521XN4N5/episode/te/ZWN6VQ8PN6/" target="_blank" rel="noopener noreferrer">NHKスペシャル『秋田君の声が聴きたい』</a></li>
           <li><a href="https://nnn.ed.jp/school_festival/" target="_blank" rel="noopener noreferrer">ZEN大学 磁石祭</a></li>
         </ul>
       </section>
@@ -42,7 +41,7 @@
       <section class="section">
         <h2>作った作品</h2>
         <ul>
-          <li><a href="https://youtu.be/15MYKL4kqic" target="_blank" rel="noopener noreferrer">自主制作ボカロライブ</a></li>
+          <li><a href="https://youtu.be/15MYKL4kqic" target="_blank" rel="noopener noreferrer">自主制作ボカロライブ</a>（※要YouTubeリンク修正）</li>
           <li><a href="https://nnn.ed.jp/school_festival/zen_university/#zero5" target="_blank" rel="noopener noreferrer">磁石祭サブスタジオ演出</a></li>
         </ul>
       </section>
@@ -102,15 +101,14 @@
           </tr>
           <tr>
             <th>2025年</th>
-            <td><a href="http://www.yokote-seiryou.net/" target="_blank" rel="noopener noreferrer">横手清陵学院高校</a> 卒業</td>
-          </tr>
+            <td><a href="http://www.yokote-seiryou.net/" target="_blank" rel="noopener noreferrer">秋田県立横手清陵学院高校</a> 卒業</td> </tr>
           <tr>
             <th>同年</th>
             <td><a href="https://zen.ac.jp/" target="_blank" rel="noopener noreferrer">ZEN大学</a> 入学</td>
           </tr>
         </table>
       </section>
-    </div>
+    </main>
 
     <script>
       // 起動アニメとスクロールアニメ
@@ -119,7 +117,8 @@
           document.getElementById("splash").style.opacity = 0;
           setTimeout(() => {
             document.getElementById("splash").style.display = "none";
-            document.querySelector(".container").style.display = "block";
+            // main要素を表示するように修正
+            document.querySelector("main.container").style.display = "block";
             const sections = document.querySelectorAll(".section");
             const observer = new IntersectionObserver(entries => {
               entries.forEach(entry => {
