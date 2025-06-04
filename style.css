@@ -41,7 +41,7 @@ body {
   gap: 400px;
 }
 
-/* ローディング画面 */
+/* ========== ローディング ========== */
 #splash {
   position: fixed;
   top: 0;
@@ -60,13 +60,18 @@ body {
   color: var(--accent-red);
   text-align: center;
   line-height: 1.5;
+  animation: warningBlink 0.9s infinite alternate;
   text-shadow: 
     0 0 6px var(--accent-red),
     0 0 12px var(--accent-red),
     0 0 24px var(--accent-red);
 }
+@keyframes warningBlink {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0.6; transform: scale(1.05); }
+}
 
-/* ヘッダー強化 */
+/* ========== ヘッダー ========== */
 .header-enhanced {
   display: flex;
   align-items: center;
@@ -80,8 +85,8 @@ body {
   background: linear-gradient(to right, rgba(179,111,247,0.08), rgba(255,60,87,0.04));
   box-shadow: 0 0 20px var(--accent-purple);
   overflow: hidden;
+  position: relative;
 }
-
 .nerv-line-top,
 .nerv-line-bottom {
   height: 2px;
@@ -146,7 +151,7 @@ body {
   margin-left: 2px;
 }
 
-/* セクション */
+/* ========== セクション ========== */
 .section {
   background: var(--card-color);
   border: 1px solid var(--border-color);
@@ -174,11 +179,9 @@ body {
   list-style: none;
   padding-left: 0;
 }
-
 .section li {
   margin-bottom: 10px;
 }
-
 .section li a {
   color: var(--accent-red);
   text-decoration: none;
