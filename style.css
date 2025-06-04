@@ -272,6 +272,15 @@ th {
   opacity: 0.9;
 }
 
+.twitter-embed {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 0 12px rgba(111, 231, 255, 0.1);
+  overflow: hidden;
+}
+
 .timeline-vertical {
   display: flex;
   flex-direction: column;
