@@ -21,7 +21,7 @@
 }
 
 body {
-  font-family: var(--font-main); /* font-familyはbodyに指定する方が一般的です */
+  font-family: var(--font-main);
   background-color: var(--bg-color);
   background-image: linear-gradient(45deg, rgba(255,0,100,0.02) 25%, transparent 25%),
                     linear-gradient(-45deg, rgba(255,0,100,0.02) 25%, transparent 25%),
@@ -29,7 +29,8 @@ body {
                     linear-gradient(-45deg, transparent 75%, rgba(255,0,100,0.02) 75%);
   background-size: 40px 40px;
   color: var(--text-color);
-  padding: 80px 120px;
+  /* モバイル対応のため、paddingをvh単位に変更、またはmedia queryで調整 */
+  padding: 80px 120px; /* デスクトップ用 */
   line-height: 1.75;
 }
 
@@ -38,7 +39,7 @@ body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 150px; /* 各セクション間150px */
+  gap: 150px; /* ここをさらに広げる (各セクション間150px) */
 }
 
 /* ローディング画面 */
@@ -111,7 +112,7 @@ h2 {
 /* セクションカード */
 section {
   background-color: var(--card-color);
-  padding: 60px;
+  padding: 60px; /* デスクトップ用 */
   border-radius: var(--radius);
   border: 1px solid var(--border-color);
   backdrop-filter: blur(6px);
@@ -167,11 +168,16 @@ table {
   border-collapse: collapse;
   margin-top: 12px;
   color: var(--text-color);
+  /* テーブルがはみ出す場合の対策 */
+  display: block; /* blockにしてスクロール可能にする */
+  overflow-x: auto; /* 横スクロールを可能にする */
+  white-space: nowrap; /* セル内のテキストが改行されないようにする */
 }
 th, td {
   padding: 14px;
   border: 1px solid var(--border-color);
   text-shadow: 1px 1px 1px #000;
+  white-space: nowrap; /* ここでもテキストの改行を防ぐ */
 }
 th {
   background-color: var(--accent-purple);
@@ -184,6 +190,11 @@ tr:nth-child(even) {
 
 /* モバイル対応 */
 @media (max-width: 600px) {
+  body {
+    /* スマホ表示では左右のpaddingを減らす */
+    padding: 40px 20px; /* 上下のパディングは維持しつつ、左右を減らす */
+  }
+
   .profile-image {
     width: 56px;
     height: 56px;
@@ -192,6 +203,19 @@ tr:nth-child(even) {
     font-size: 2rem;
   }
   section {
+    /* スマホ表示ではセクション内のpaddingを減らす */
     padding: 20px;
+  }
+
+  /* テーブルの各セル（th, td）もモバイル向けに調整 */
+  th, td {
+    padding: 10px; /* パディングを少し減らす */
+    font-size: 0.9em; /* フォントサイズを少し小さくする */
+  }
+
+  /* テーブルが見切れるのを防ぐための補足調整 */
+  table {
+      /* テーブル全体を画面幅に合わせるための追加調整 */
+      min-width: unset; /* 必要に応じて最小幅をリセット */
   }
 }
