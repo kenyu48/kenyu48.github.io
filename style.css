@@ -37,9 +37,6 @@ body {
   gap: 100px;
 }
 
-/* ================= */
-/* Splash            */
-/* ================= */
 #splash {
   position: fixed;
   top: 0;
@@ -53,6 +50,7 @@ body {
   z-index: 9999;
   transition: opacity 1s ease;
 }
+
 .splash-warning {
   font-size: 2rem;
   color: var(--accent-red);
@@ -62,14 +60,12 @@ body {
                0 0 24px var(--accent-red);
   animation: warningBlink 0.9s infinite alternate;
 }
+
 @keyframes warningBlink {
   0% { opacity: 1; transform: scale(1); }
   100% { opacity: 0.6; transform: scale(1.05); }
 }
 
-/* ================= */
-/* Header            */
-/* ================= */
 .split-header {
   display: flex;
   align-items: stretch;
@@ -79,7 +75,11 @@ body {
   background: var(--bg-color);
   border: 1px solid var(--border-color);
   margin-bottom: 40px;
+  background-image: url('header-bg.svg');
+  background-size: cover;
+  background-blend-mode: screen;
 }
+
 .split-left {
   width: 40%;
   background: rgba(255, 255, 255, 0.02);
@@ -88,6 +88,7 @@ body {
   justify-content: center;
   padding: 30px;
 }
+
 .profile-image-enhanced {
   width: 100px;
   height: 100px;
@@ -96,6 +97,7 @@ body {
   border: 2px solid var(--accent-red);
   box-shadow: 0 0 16px var(--accent-red);
 }
+
 .split-right {
   width: 60%;
   padding: 30px;
@@ -104,26 +106,31 @@ body {
   flex-direction: column;
   justify-content: center;
 }
+
 .split-title {
   font-size: 2.4rem;
   font-weight: bold;
   color: var(--accent-purple);
   margin-bottom: 6px;
-  text-shadow: 0 0 8px var(--accent-purple);
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000,
+     0 0 8px var(--accent-purple);
 }
+
 .split-subtitle {
   font-size: 1.1rem;
   color: var(--muted);
   margin-bottom: 10px;
 }
+
 .split-tagline {
   font-size: 0.95rem;
   color: var(--accent-blue);
 }
 
-/* ================= */
-/* Section Base      */
-/* ================= */
 .section {
   padding: 40px 20px;
   border-radius: var(--radius);
@@ -133,30 +140,27 @@ body {
   transform: translateY(40px);
   transition: all 0.6s ease;
 }
+
 .show {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* ================= */
-/* Profile           */
-/* ================= */
 .profile-list {
   list-style: none;
   padding: 0;
 }
+
 .profile-list li {
   padding: 10px 0;
   font-size: 1.1rem;
   border-bottom: 1px solid var(--border-color);
 }
+
 .profile-list strong {
   color: var(--accent-blue);
 }
 
-/* ================= */
-/* URL Cards         */
-/* ================= */
 .event-card {
   position: relative;
   background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
@@ -167,6 +171,7 @@ body {
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .event-card::before {
   content: "";
   position: absolute;
@@ -179,13 +184,16 @@ body {
   transition: transform 0.5s ease;
   z-index: 0;
 }
+
 .event-card:hover::before {
   transform: scale(1.2);
 }
+
 .event-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 0 25px rgba(255, 60, 87, 0.2);
 }
+
 .event-card a {
   position: relative;
   color: var(--accent-blue);
@@ -195,24 +203,27 @@ body {
   display: block;
 }
 
-/* ================= */
-/* Skills Table      */
-/* ================= */
+.event-card a:hover {
+  color: var(--accent-purple);
+  text-decoration: underline;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
 }
+
 th, td {
   padding: 12px;
   border: 1px solid var(--border-color);
   text-align: left;
 }
+
 th {
   background: rgba(255, 255, 255, 0.05);
   color: var(--accent-purple);
 }
 
-/* SNS */
 .contact-links {
   list-style: none;
   padding: 0;
@@ -220,8 +231,11 @@ th {
   flex-direction: column;
   gap: 12px;
 }
+
 .contact-button, .contact-email {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: rgba(255,255,255,0.02);
   color: var(--accent-purple);
   padding: 10px 14px;
@@ -231,35 +245,36 @@ th {
   font-weight: bold;
   transition: background 0.3s, transform 0.2s;
 }
+
 .contact-button:hover,
 .contact-email:hover {
   background: rgba(255, 60, 87, 0.08);
   transform: translateY(-2px);
 }
+
 .contact-button i, .contact-email i {
   margin-right: 8px;
 }
 
-
-/* ================= */
-/* Timeline / 歩み     */
-/* ================= */
 .timeline-vertical {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
+
 .timeline-entry {
   padding: 14px;
   background: rgba(255, 255, 255, 0.03);
   border-left: 4px solid var(--accent-purple);
   border-radius: var(--radius);
 }
+
 .timeline-year {
   font-size: 1.1rem;
   font-weight: bold;
   color: var(--accent-blue);
 }
+
 .timeline-desc a {
   color: var(--text-color);
   text-decoration: none;
@@ -267,9 +282,11 @@ th {
   font-size: 1rem;
 }
 
-/* ================= */
-/* Responsive        */
-/* ================= */
+.timeline-desc a:hover {
+  color: var(--accent-purple);
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   .split-header {
     flex-direction: column;
@@ -277,6 +294,9 @@ th {
   .split-left, .split-right {
     width: 100%;
     text-align: center;
+  }
+  .profile-image-enhanced {
+    margin-bottom: 16px;
   }
   table, th, td {
     font-size: 0.95rem;
