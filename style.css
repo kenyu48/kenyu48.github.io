@@ -38,8 +38,8 @@ body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  /* ここをさらに広げる (各セクション間) */
-  gap: 250px; /* 150pxから250pxに変更しました。お好みの値に調整してください */
+  /* 各セクション間をさらに広げる */
+  gap: 300px; /* 250pxから300pxに変更しました。お好みの値に調整してください */
 }
 
 /* ローディング画面 */
@@ -168,15 +168,15 @@ table {
   border-collapse: collapse;
   margin-top: 12px;
   color: var(--text-color);
-  display: block; /* blockにしてスクロール可能にする */
-  overflow-x: auto; /* 横スクロールを可能にする */
-  white-space: nowrap; /* セル内のテキストが改行されないようにする */
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 th, td {
   padding: 14px;
   border: 1px solid var(--border-color);
   text-shadow: 1px 1px 1px #000;
-  white-space: nowrap; /* ここでもテキストの改行を防ぐ */
+  white-space: nowrap;
 }
 th {
   background-color: var(--accent-purple);
@@ -190,7 +190,7 @@ tr:nth-child(even) {
 /* モバイル対応 */
 @media (max-width: 600px) {
   body {
-    padding: 40px 20px; /* 上下のパディングは維持しつつ、左右を減らす */
+    padding: 40px 20px;
   }
 
   .profile-image {
@@ -202,6 +202,11 @@ tr:nth-child(even) {
   }
   section {
     padding: 20px;
+  }
+
+  /* モバイルでのセクション間のギャップを調整 */
+  .container {
+    gap: 150px; /* モバイルではデスクトップほど広げないなど調整 */
   }
 
   th, td {
