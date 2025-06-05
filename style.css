@@ -294,6 +294,10 @@ th {
   border-radius: var(--radius);
 }
 
+.timeline-entry.red-line {
+  border-left: 4px solid var(--accent-red);
+}
+
 .timeline-year {
   font-size: 1.1rem;
   font-weight: bold;
